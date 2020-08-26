@@ -1,0 +1,160 @@
+.bigImg{
+  width: 100%;
+  height: 400rpx;
+}
+.productCard{
+  width: 90%;
+  height: 200rpx;
+  margin-left: 5%;
+  background-color: white;
+  position: absolute;
+  box-shadow: 0 0 2px white;
+  top: 300rpx;
+}
+.shareBtn{
+  width: 200rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  color: white;
+  background-color: #0088FF;
+  border:none;
+  font-size: 36rpx;
+  line-height: 80rpx;
+}
+.top_bottomView {
+  display: flex;
+  margin-top: 100rpx;
+}
+.scroll-x {
+  height: 80rpx;
+  width: 100%;
+  background: white;
+  white-space: nowrap;
+  /* display: flex;i */
+  box-sizing: border-box;
+  /* overflow: hidden; */
+}
+.scroll-y{
+  height: 100%;
+  width: 100%;
+  background: white;
+
+}
+/* 隐藏scrollbar */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.view-item {
+  width: 22%;
+  /* height: 62rpx; */
+  display: inline-block;
+  text-align: center;
+  font-size: 32rpx;
+  color: black;
+  opacity: 0.6;
+}
+.item-active {
+  color: #00aeff;
+  opacity: 1;
+}
+.productBoxShow{
+  width: 100%;
+}
+.introductionBox{
+  width: 95%;
+  margin-left: 2.5%;
+}
+.listBox{
+  width: 95%;
+  margin-left: 2.5%;
+  height: 150rpx;
+  border-bottom: 1px solid #E8E8E8;
+  margin-top: 25rpx;
+}
+.listBox>view:nth-of-type(2){
+  width: 80rpx;
+  height: 30rpx;
+  font-size: 25rpx;
+  border-radius: 5rpx;
+  border:1px solid #08BB08;
+  color: #08BB08;
+  text-align: center;
+  line-height: 30rpx;
+}
+.listBox>view:nth-of-type(3){
+  width: 100%;
+}
+.listBox>view:nth-of-type(3)>text{
+  margin-right: 50rpx;
+}
+.commentBox{
+  width: 95%;
+  height: 200rpx;
+  margin-bottom: 30rpx;
+  margin-left: 2.5%;
+}
+.commentBox>view:nth-of-type(1){
+  display: flex;
+  align-content: center;
+
+}
+.commentBox>view:nth-of-type(1)>image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.payMoney{
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+.payMoney>view{
+  width: 33%;
+  height: 100%;
+  text-align: center;
+  line-height: 100rpx;
+}
+.payMoney>view:nth-of-type(1){
+  color: #FF5555;
+  font-size: 56rpx;
+}
+.payMoney>view:nth-of-type(3){
+  background-color: #0088FF;
+  color: white;
+}
+.codeBox{
+  width: 80%;
+  height: 80%;
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  background-color: white;
+  text-align: center;
+}
+.codeBox>text:nth-of-type(1){
+  float: right;
+  margin-right: 15rpx;
+}
+.codeBox>image{
+  width: 500rpx;
+  height: 500rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -250rpx;
+  margin-left: -250rpx;
+}
+.codeBox>text:nth-of-type(2){
+  position: absolute;
+  bottom: 30rpx;
+  left: 30rpx;
+}
+.codeBoxActive{
+  visibility: hidden;
+}

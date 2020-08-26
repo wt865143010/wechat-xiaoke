@@ -1,0 +1,42 @@
+.myOwnTop{
+  width: 100%;
+  height: 500rpx;
+  background-color: #0088FF;
+}
+.userinfo-avatar{
+  width: 200rpx;
+  height: 200rpx;
+  border: 3px solid white;
+  border-radius: 200rpx;
+}
+.username{
+  width: 100%;
+  text-align: center;
+}
+.userinfo-nickname{
+  color: white;
+  font-size: 45rpx;
+}
+.myOwnOeder,.myOwnCustomer{
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1px solid dimgrey;
+  display: flex;
+  line-height: 100rpx;
+  justify-content: space-between;
+}
+
+
+.myOwnImg{
+  margin-top: 25rpx;
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0 25rpx;
+}
+.myOwnLeft{
+  height: 100%;
+  display: flex;
+}
+.myOwnOeder image,.myOwnCustomer image{
+  margin-top: 25rpx;
+}

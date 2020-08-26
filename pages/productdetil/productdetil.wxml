@@ -1,0 +1,67 @@
+<view>
+  <image src="{{imgsrc}}" class="bigImg"></image>
+  <view class="productCard">
+    <text class="productTitle">{{title}}</text>
+    <view>
+      <text>1.27万人已学习</text>
+      <button class="shareBtn">分享</button>
+    </view>
+  </view>
+</view>
+
+<view class='top_bottomView'>
+  <scroll-view scroll-x class="scroll-x" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+    <block wx:for="{{list.type}}" wx:key="{{index}}">
+      <view class="view-item {{clickNumber==index?'item-active':''}}" data-curr="{{index}}" bindtap='centerTap'>
+        {{item}}
+      </view>
+    </block>
+  </scroll-view>
+</view>
+
+
+<!--内容-->
+<swiper style="height:1100rpx" bindchange='changeSwipe' current='{{clickNumber}}' >
+  <swiper-item  wx:for="{{list.type}}" wx:key="index" wx:for-item="type">
+    <scroll-view scroll-y style="height:100%">
+      <view class="productBoxShow">
+        <block wx:for="{{list.children}}" wx:key="index" wx:for-item="product">
+          <view class="introductionBox" wx:if="{{type=='简介'&&product.type=='简介'}}">
+            <view>{{product.title}}</view>
+            <view>{{product.content}}</view>
+          </view>
+           <view class="listBox" wx:elif="{{type=='列表'&&product.type=='列表'}}">
+            <view catchtap="openPlayer" data-list="{{product}}">{{product.title}}</view>
+            <view>{{product.pay}}</view>
+            <view>
+              <text>{{product.time}}</text>
+              <text>{{product.number}}</text>
+            </view>
+          </view>
+          <view class="commentBox"  wx:elif="{{type=='评论'&&product.type=='评论'}}">
+              <view>
+                <image src="{{product.img}}"></image>
+                <text>{{product.name}}</text>
+              </view>
+              <view>
+                <text>{{product.time}}</text>
+              </view>
+              <view>
+                <text>{{product.content}}</text>
+              </view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+<view class="payMoney">
+  <view>{{price}}</view>
+  <view>联系客服</view>
+  <view catchtap="openCodeBox">立即购买</view>
+</view>
+<view class="codeBox {{isShow}}">
+  <text catchtap="closeCodeBox">×</text>
+  <image src="../../images/wechat.png"></image>
+  <text>请使用微信扫一扫完成支付</text>
+</view>

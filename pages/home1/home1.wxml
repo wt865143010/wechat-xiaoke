@@ -1,0 +1,57 @@
+<view>
+  <view class="homeNav">
+    <block wx:for="{{arr}}" wx:key="index">
+      <view class="homeNavItem">
+        <image src="{{item.img}}" mode="aspectFit" data-product="{{item}}" catchtap="openNewPage"></image>
+        <text>{{item.title}}</text>
+      </view>
+    </block>
+  </view>
+
+  <!--轮播图-->
+  <view class="lunbo">
+    <swiper class="lunboBox" indicator-dots="true" indicator-color="rgba(255,255,255,1)" indicator-active-color="rgba(255,255,255,.3)">
+      <swiper-item>
+        <view class="lunboItem">
+          <image src="../../images/s1.png" class="lunboImg"></image>
+        </view> 
+      </swiper-item>
+       <swiper-item>
+        <view class="lunboItem">
+          <image src="../../images/s2.png" class="lunboImg"></image>
+        </view> 
+      </swiper-item>
+       <swiper-item>
+        <view class="lunboItem">
+          <image src="../../images/s3.png" class="lunboImg"></image>
+        </view> 
+      </swiper-item>
+    </swiper> 
+  </view>
+  <!--分类-->
+  <view class="homeImgNav">
+    <image src="../../images/n1.png" data-product="{{arr2}}" catchtap="openNewPage"></image>
+    <image src="../../images/n2.png" data-product="{{arr3}}" catchtap="openNewPage"></image>
+    <image src="../../images/n3.png" data-product="{{arr4}}" catchtap="openNewPage"></image>
+    <image src="../../images/n4.png" data-product="{{arr5}}" catchtap="openNewPage"></image>
+  </view>
+
+  <view class="homeCoursShow">
+    <text>热门课程</text>
+    <block wx:for="{{arr1}}" wx:key="index">
+      <view class="homeCourseShowBox">
+        <view class="homeCourseShowBoxLeft">
+          <image src="{{item.url}}"></image>
+        </view>
+        <view class="homeCourseShowBoxRight">
+          <view><text class="homeCourseShowBoxRightTitle">{{item.title}}</text></view>
+          <view><text class="homeCourseShowBoxRightGrade">{{item.grade}}</text></view>
+          <view>
+            <text>{{item.number}}</text>
+            <text>{{item.price}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

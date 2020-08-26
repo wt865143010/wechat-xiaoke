@@ -1,0 +1,58 @@
+<view class='top_bottomView'>
+  <scroll-view scroll-x class="scroll-x" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+    <block wx:for="{{list.type}}" wx:key="{{index}}">
+      <view class="view-item {{clickNumber==index?'item-active':''}}" data-curr="{{index}}" bindtap='centerTap'>
+        {{item}}
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<swiper style="height:1100rpx" bindchange='changeSwipe' current='{{clickNumber}}' >
+  <swiper-item  wx:for="{{list.type}}" wx:key="index" wx:for-item="type">
+    <scroll-view scroll-y style="height:100%">
+      <view class="productBoxShow">
+        <block wx:for="{{list.product}}" wx:key="index" wx:for-item="product">
+          <view wx:if="{{type==product.type}}">
+            <view class="productBigBox">
+              <view class="productBox">
+                <view class="productBoxLeft">
+                  <image src="{{product.url}}"></image>
+                </view>
+                <view class="productBoxRight">
+                  <view>
+                    <text>{{product.title}}</text>
+                  </view>
+                  <view>
+                    <text>{{product.grade}}</text>
+                  </view>
+                  <view>
+                    <text>{{product.number}}</text> 
+                    <text>{{product.price}}</text> 
+                  </view>
+                </view>
+               
+              </view>
+              <view class="productBoxBottom" wx:if="{{type=='待付款'}}">
+                  <view>
+                    <text>订单号码 155285626541562665823</text>
+                  </view>
+                  <view>
+                    <button class="productBoxBtn">取消订单</button>
+                    <button class="productBoxBtn">去付款</button>
+                  </view>
+              </view>
+               <view class="productBoxBottom" wx:else>
+                  <view>
+                    <text>订单号码 155285626541562665823</text>
+                  </view>
+                  <view>
+                    <button class="productBoxBtn">去学习</button>
+                  </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>

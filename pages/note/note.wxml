@@ -1,0 +1,3 @@
+<button bindgetuserinfo="getuserinfo" open-type="getUserInfo">获取授权</button>
+<text>{{userInfo.nickName}}</text>
+<image src="{{userInfo.avatarUrl}}"></image>

@@ -1,0 +1,105 @@
+<view class='top_bottomView'>
+  <scroll-view scroll-x class="scroll-x" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+    <block wx:for="{{list.type}}" wx:key="{{index}}">
+      <view class="view-item {{clickNumber==index?'item-active':''}}" data-curr="{{index}}" bindtap='centerTap'>
+        {{item}}
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<!-- 内容区 -->
+
+<view wx:if="{{list.type.length==0}}">
+  <block wx:for="{{list.product}}" wx:key="index" wx:for-item="product">
+      <view class="productBox" data-title="{{product}}" catchtap="openProductDetil">
+        <view class="productBoxLeft">
+          <image src="{{product.url}}"></image>
+        </view>
+        <view class="productBoxRight">
+          <view>
+            <text>{{product.title}}</text>
+          </view>
+          <view>
+            <text>{{product.grade}}</text>
+          </view>
+          <view>
+            <text>{{product.number}}</text> 
+            <text>{{product.price}}</text> 
+          </view>
+        </view>
+      </view>
+    
+  </block>
+</view>
+<swiper style="height:1100rpx" bindchange='changeSwipe' current='{{clickNumber}}' >
+  <swiper-item  wx:for="{{list.type}}" wx:key="index" wx:for-item="type">
+    <scroll-view scroll-y style="height:100%">
+      <view class="productBoxShow">
+        <block wx:for="{{list.product}}" wx:key="index" wx:for-item="product">
+          <view wx:if="{{type=='全部'}}">
+            <view class="productBox" data-title="{{product}}" catchtap="openProductDetil">
+              <view class="productBoxLeft">
+                <image src="{{product.url}}"></image>
+              </view>
+              <view class="productBoxRight">
+                <view>
+                  <text>{{product.title}}</text>
+                </view>
+                <view>
+                  <text>{{product.grade}}</text>
+                </view>
+                <view>
+                  <text>{{product.number}}</text> 
+                  <text>{{product.price}}</text> 
+                </view>
+              </view>
+            </view>
+          </view>
+           <view wx:elif="{{type==undefind||type==''}}">
+            <view wx:if="{{type==product.type}}">
+              <view class="productBox" data-title="{{product}}" catchtap="openProductDetil">
+                <view class="productBoxLeft">
+                  <image src="{{product.url}}"></image>
+                </view>
+                <view class="productBoxRight">
+                  <view>
+                    <text>{{product.title}}</text>
+                  </view>
+                  <view>
+                    <text>{{product.grade}}</text>
+                  </view>
+                  <view>
+                    <text>{{product.number}}</text> 
+                    <text>{{product.price}}</text> 
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view wx:else>
+            <view wx:if="{{type==product.type}}">
+              <view class="productBox" data-title="{{product}}" catchtap="openProductDetil">
+                <view class="productBoxLeft">
+                  <image src="{{product.url}}"></image>
+                </view>
+                <view class="productBoxRight">
+                  <view>
+                    <text>{{product.title}}</text>
+                  </view>
+                  <view>
+                    <text>{{product.grade}}</text>
+                  </view>
+                  <view>
+                    <text>{{product.number}}</text> 
+                    <text>{{product.price}}</text> 
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+
